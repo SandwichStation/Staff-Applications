@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: superbrothers/close-pull-request@v3
-      if: github.actor == 'B3CKDOOR'
+      if: github.actor != 'B3CKDOOR'
       with:
         comment: "We do not accept PR's on this repo. If you have any questions, join our discord."
