@@ -5,11 +5,11 @@ on:
     types: [opened]
 
 jobs:
-  run:
-    if: github.actor == "B3CKDOOR"
+  close-pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: superbrothers/close-pull-request@v3
-      with:
-        # Optional. Post a issue comment just before closing a pull request.
+      - name: Check if PR is made by specific user
+        if: github.actor == 'B3CKDOOR'
+        uses: superbrothers/close-pull-request@v3
+        with:
         comment: "We do not accept PR's on this repo. If you have any questions, join our discord."
